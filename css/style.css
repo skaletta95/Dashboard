@@ -8,7 +8,7 @@ body {
     padding: 0;
     font-family: "Google Sans";
     width: 100%;
-    color: #FFFFFF;
+    color: #929292;
 }
 
 
@@ -31,13 +31,11 @@ body {
 
 h1 {
     text-transform: uppercase;
-    color: #929292;
     cursor: inherit;
 }
 
 .theme {
     font-size: 32px !important;
-    color: #929292;
     cursor: pointer;
 }
 
