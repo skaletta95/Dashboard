@@ -11,6 +11,7 @@ body {
     color: #929292;
 }
 
+/* START HEADER */
 
 .header {
     width: 100%;
@@ -58,12 +59,14 @@ h1 {
     border: 2px solid rgb(219, 41, 41);
 }
 
+/* END HEADER */
 
 .container {
     display: flex;
     height: calc(100vh - 60px);
 }
 
+/* SIDEBAR START */
 
 .sidebar {
     width: 270px;
@@ -75,7 +78,83 @@ h1 {
     border-right: 2px solid #313131;
 }
 
+/* PERIOD SELECTOR START*/
+.period-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #606060;
+    margin-bottom: 6px;
+}
 
+.period-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.selector-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-select {
+    width: 100%;
+    background-color: #1C1D20;
+    border: 1.5px solid #313131;
+    border-radius: 8px;
+    color: #d0d0d0;
+    font-family: "Google Sans";
+    font-size: 14px;
+    padding: 8px 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23606060' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: border-color 0.2s;
+}
+
+.custom-select:hover { border-color: #505050; }
+.custom-select:focus { outline: none; border-color: rgb(157, 28, 28); }
+.custom-select option { background-color: #1C1D20; color: #d0d0d0; }
+/* PERIOD SELECTOR END */
+
+/* SIDEBAR NAVIGATION START */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.nav-btn {
+    font-family: "Google Sans";
+    font-size: 14px;
+    text-align: left;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    color: #606060;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #2e2f35;
+    color: #d0d0d0;
+}
+
+.nav-btn.active {
+    background-color: #2e2f35;
+    color: #d0d0d0;
+    border-left: 3px solid rgb(157, 28, 28);
+}
+
+
+/* MAIN START */
 .main {
     flex: 1;
     background-color: #212527;

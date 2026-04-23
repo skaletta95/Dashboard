@@ -31,12 +31,40 @@
     </header>
     <!-- END HEADER -->
 
-    <div class="container">
+    <div class="container"> <!-- SIDEBAR START -->
         <div class="sidebar" id="sidebar">
-            <div class="month-selector">
-                <h2>Period</h2>
-                <input type="month">
+            <div class="period-selectors">
+                <div class="selector-group">
+                    <div class="period-label">Month</div>
+                    <select class="custom-select" id="month-select">
+                        <option value="0">January</option>
+                        <option value="1">February</option>
+                        <option value="2">March</option>
+                        <option value="3">April</option>
+                        <option value="4">May</option>
+                        <option value="5">June</option>
+                        <option value="6">July</option>
+                        <option value="7">August</option>
+                        <option value="8">September</option>
+                        <option value="9">October</option>
+                        <option value="10">November</option>
+                        <option value="11">December</option>
+                    </select>
+                </div>
+                <div class="selector-group">
+                    <div class="period-label">Year</div>
+                    <select class="custom-select" id="year-select">
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                    </select>
+                </div>
             </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-tab="projects">Projects</button>
+                <button class="nav-btn" data-tab="employees">Employees</button>
+            </nav>
         </div>
         <main class="main" id="main">
 
