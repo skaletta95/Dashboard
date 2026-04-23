@@ -77,6 +77,38 @@ const state = {
     activeTab: 'projects'
 };
 
+// TABLE INIT
+
+function renderProjectsTable() {
+    const data = loadData();
+    const monthData = getMonthData(data, state.year, state.month);
+    const projects = monthData.projects;
+
+    const tbody = document.getElementById('projects-tbody');
+
+    if (projects.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="4" style="text-align: center; color: #606060; padding: 40px;">
+                    No projects yet
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    tbody.innerHTML = projects.map(project => `
+        <tr>
+            <td>${project.companyName}</td>
+            <td>${project.projectName}</td>
+            <td>$${project.budget.toFixed(2)}</td>
+            <td>${project.capacity}</td>
+        </tr>
+    `).join('');
+}
+
+
+
 // PERIOD SELECTOR
 const now = new Date();
 document.getElementById('month-select').value = now.getMonth();
@@ -91,6 +123,11 @@ navButtons.forEach(btn => {
         btn.classList.add('active');
 
         const tab = btn.dataset.tab;
-        console.log('Active tab:', tab);
+        state.activeTab = tab;
+
+        document.getElementById('projects-view').style.display = tab === 'projects' ? 'block' : 'none';
+        document.getElementById('employees-view').style.display = tab === 'employees' ? 'block' : 'none';
     });
 });
+
+renderProjectsTable();

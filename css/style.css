@@ -159,3 +159,32 @@ h1 {
     flex: 1;
     background-color: #212527;
 }
+
+.view {
+    padding: 24px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 10px 16px;
+    color: #606060;
+    font-weight: 500;
+    border-bottom: 2px solid #313131;
+    white-space: nowrap;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #2a2b30;
+    color: #d0d0d0;
+}
+
+.data-table tbody tr:hover {
+    background-color: #2a2b30;
+}
