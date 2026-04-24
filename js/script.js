@@ -107,6 +107,46 @@ function renderProjectsTable() {
     `).join('');
 }
 
+function calcAge(dateOfBirth) {
+    const today = new Date();
+    const birth = new Date(dateOfBirth);
+    let age = today.getFullYear() - birth.getFullYear();
+    const monthDiff = today.getMonth() - birth.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+function renderEmployeesTable() {
+    const data = loadData();
+    const monthData = getMonthData(data, state.year, state.month);
+    const employees = monthData.employees;
+
+    const tbody = document.getElementById('employees-tbody');
+
+    if (employees.length === 0) {
+        tbody.innerHTML = `
+            <tr>
+                <td colspan="5" style="text-align: center; color: #606060; padding: 40px;">
+                    No employees yet
+                </td>
+            </tr>
+        `;
+        return;
+    }
+
+    tbody.innerHTML = employees.map(emp => `
+        <tr>
+            <td>${emp.name}</td>
+            <td>${emp.surname}</td>
+            <td>${calcAge(emp.dateOfBirth)}</td>
+            <td>${emp.position}</td>
+            <td>$${emp.salary.toFixed(2)}</td>
+        </tr>
+    `).join('');
+}
+
 
 
 // PERIOD SELECTOR
@@ -131,3 +171,4 @@ navButtons.forEach(btn => {
 });
 
 renderProjectsTable();
+renderEmployeesTable();
