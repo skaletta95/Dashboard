@@ -188,3 +188,132 @@ h1 {
 .data-table tbody tr:hover {
     background-color: #2a2b30;
 }
+
+/* SLIDE PANEL */
+
+.panel-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.panel-overlay.active {
+    display: block;
+}
+
+.slide-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: #24252A;
+    border-left: 2px solid #313131;
+    z-index: 101;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-panel.active {
+    right: 0;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: 2px solid #313131;
+}
+
+.panel-header h2 {
+    color: #d0d0d0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.panel-close {
+    background: transparent;
+    border: none;
+    color: #606060;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.panel-close:hover {
+    color: #d0d0d0;
+}
+
+.panel-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #606060;
+}
+
+.form-input {
+    background: #1C1D20;
+    border: 1.5px solid #313131;
+    border-radius: 8px;
+    color: #d0d0d0;
+    font-family: "Google Sans";
+    font-size: 14px;
+    padding: 10px 12px;
+    transition: border-color 0.2s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: rgb(157, 28, 28);
+}
+
+.form-input.invalid {
+    border-color: rgb(157, 28, 28);
+}
+
+.form-error {
+    font-size: 12px;
+    color: rgb(219, 41, 41);
+    min-height: 16px;
+}
+
+.submit-btn {
+    font-family: "Google Sans";
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    background: transparent;
+    border: 2px solid rgb(157, 28, 28);
+    color: rgb(157, 28, 28);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 8px;
+}
+
+.submit-btn:hover:not(:disabled) {
+    color: rgb(219, 41, 41);
+    border-color: rgb(219, 41, 41);
+}
+
+.submit-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

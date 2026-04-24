@@ -25,7 +25,7 @@
             </span>
         </div>
         <div class="header-part">
-            <button class="add-btn">+ Add Button</button>
+            <button class="add-btn" id="open-add-panel">+ Add Project</button>
             <button class="add-btn">Seed data</button>
         </div>
     </header>
@@ -98,6 +98,79 @@
                 </table>
             </div>
         </main>
+        <div class="panel-overlay" id="panel-overlay"></div>
+
+        <div class="slide-panel" id="add-project-panel">
+            <div class="panel-header">
+                <h2>Add Project</h2>
+                <button class="panel-close" id="close-project-panel">✕</button>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="form-label">Project Name</label>
+                    <input type="text" class="form-input" id="input-project-name">
+                    <span class="form-error" id="error-project-name"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Company Name</label>
+                    <input type="text" class="form-input" id="input-company-name">
+                    <span class="form-error" id="error-company-name"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Budget</label>
+                    <input type="number" class="form-input" id="input-budget">
+                    <span class="form-error" id="error-budget"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Employee Capacity</label>
+                    <input type="number" class="form-input" id="input-capacity">
+                    <span class="form-error" id="error-capacity"></span>
+                </div>
+                <button class="submit-btn" id="submit-project">Add Project</button>
+            </div>
+        </div>
+        <div class="slide-panel" id="add-employee-panel">
+            <div class="panel-header">
+                <h2>Add Employee</h2>
+                <button class="panel-close" id="close-employee-panel">✕</button>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input type="text" class="form-input" id="input-emp-name">
+                    <span class="form-error" id="error-emp-name"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Surname</label>
+                    <input type="text" class="form-input" id="input-emp-surname">
+                    <span class="form-error" id="error-emp-surname"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date of Birth</label>
+                    <input type="date" class="form-input" id="input-emp-dob">
+                    <span class="form-error" id="error-emp-dob"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Position</label>
+                    <select class="form-input custom-select" id="input-emp-position">
+                        <option value="">Select position</option>
+                        <option value="Junior">Junior</option>
+                        <option value="Middle">Middle</option>
+                        <option value="Senior">Senior</option>
+                        <option value="Lead">Lead</option>
+                        <option value="Architect">Architect</option>
+                        <option value="BO">BO</option>
+                    </select>
+                    <span class="form-error" id="error-emp-position"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Salary</label>
+                    <input type="number" class="form-input" id="input-emp-salary">
+                    <span class="form-error" id="error-emp-salary"></span>
+                </div>
+                <button class="submit-btn" id="submit-employee" disabled>Add Employee</button>
+            </div>
+        </div>
     </div>
     <script src="js/script.js"></script>
 </body>
